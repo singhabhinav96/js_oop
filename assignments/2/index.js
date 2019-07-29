@@ -37,14 +37,18 @@ personStore.greet(); // -> Logs 'hello'
 
 function personFromPersonStore(name, age) {
   // add code here
+  var data = Object.create(personStore);
+  data.name = name;
+  data.age = age;
+  return data;
 }
 
 var sandra = personFromPersonStore("Sandra", 26);
 
 // /********* Uncomment these lines to test your work! *********/
-// console.log(sandra.name); // -> Logs 'Sandra'
-// console.log(sandra.age); //-> Logs 26
-// sandra.greet(); //-> Logs 'hello'
+console.log(sandra.name); // -> Logs 'Sandra'
+console.log(sandra.age); //-> Logs 26
+sandra.greet(); //-> Logs 'hello'
 
 /*** CHALLENGE 3 of 3 ***/
 
